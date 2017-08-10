@@ -19,8 +19,8 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 // newly added by me
-app.get('/article-one', function(req,res){
-    res.send('This sis article 1');
+app.get('/profile', function(req,res){
+   res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
 });
 
 app.get('/article-two', function(req,res){
