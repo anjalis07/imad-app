@@ -1,10 +1,13 @@
-var express = require('express');
-var morgan = require('morgan');
+//importing library
+var express = require('express');//to create webs erver - port and handling hhtp connection
+var morgan = require('morgan');//to help output log of server
 var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
 
+
+//when a get request / this should be executed
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
