@@ -3,6 +3,16 @@ var express = require('express');//to create webs erver - port and handling hhtp
 var morgan = require('morgan');//to help output log of server
 var path = require('path');
 var crypto=require("crypto");
+// database purpose
+var pool=require("pg").Pool;
+var config={
+    user: 'anjalisat7',
+    database : 'anjalisat7',
+    host :'http://db.imad.hasura-app.io',
+    port : '5432',
+    password: process.env.DB_PASSWORD
+   };
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -39,6 +49,22 @@ var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+
+// DATABASE CONNECTIVITY
+var pool=new Pool(config);
+app.get('/test-db', function(req,res){
+    // make a select req and respond
+    pool.query('SELCT * FROM test',function(err,result){
+        if(err){
+            res.status(500);
+            send(err.toString());
+        }else{
+            send(JSON.stringfy(result));
+        }
+    });
+});
+
+
 
 
 // Hash the password
