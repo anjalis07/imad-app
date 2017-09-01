@@ -2,6 +2,7 @@
 var express = require('express');//to create webs erver - port and handling hhtp connection
 var morgan = require('morgan');//to help output log of server
 var path = require('path');
+var crypto=require("crypto");
 
 var app = express();
 app.use(morgan('combined'));
@@ -37,4 +38,17 @@ app.get('/article-three', function(req,res){
 var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
+});
+
+
+// Hash the password
+
+function hash(input,salt){
+    var hashed= crypto.pbkdf2Sync('input','salt',10000,512,'sha512');
+    return hashed.toString("hex");
+}
+
+app.get('/hash:input',function(req,res){
+    var hashedString= hash(req.params.input, "this-is-anjali");
+    res.send(hashedString);
 });
