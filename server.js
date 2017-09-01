@@ -5,11 +5,12 @@ var path = require('path');
 var crypto=require("crypto");
 // database purpose
 var Pool=require("pg").Pool;
+
 var config={
     user: 'anjalisat7',
     database : 'anjalisat7',
     host :'http://db.imad.hasura-app.io',
-    port : '80',
+    port : '5432',
     password: process.env.DB_PASSWORD
    };
 
@@ -45,10 +46,10 @@ app.get('/article-three', function(req,res){
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
-//var port = 80;
-//app.listen(port, function () {
-//  console.log(`IMAD course app listening on port ${port}!`);
-//});
+var port = 80;
+app.listen(port, function () {
+  console.log(`IMAD course app listening on port ${port}!`);
+});
 
 // DATABASE CONNECTIVITY
 var pool=new Pool(config);
