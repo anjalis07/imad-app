@@ -6,11 +6,11 @@ var crypto=require("crypto");
 // database purpose
 var Pool=require("pg").Pool;
 var config={
-//    user: 'anjalisat7',
-//    database : 'anjalisat7',
-//    host :'http://db.imad.hasura-app.io',
-//    port : '5432',
-//    password: process.env.DB_PASSWORD
+    user: 'anjalisat7',
+    database : 'anjalisat7',
+    host :'http://db.imad.hasura-app.io',
+    port : '5432',
+    password: process.env.DB_PASSWORD
    };
 
 
