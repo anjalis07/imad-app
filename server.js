@@ -4,7 +4,7 @@ var morgan = require('morgan');//to help output log of server
 var path = require('path');
 var crypto=require("crypto");
 // database purpose
-var pool=require("pg").Pool;
+var Pool=require("pg").Pool;
 var config={
     user: 'anjalisat7',
     database : 'anjalisat7',
