@@ -9,7 +9,7 @@ var config={
     user: 'anjalisat7',
     database : 'anjalisat7',
     host :'http://db.imad.hasura-app.io',
-    port : '5432',
+    port : '80',
     password: process.env.DB_PASSWORD
    };
 
