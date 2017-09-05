@@ -40,7 +40,7 @@ app.get('/article-two', function(req,res){
 });
 
 app.get('/article-three', function(req,res){
-    res.send('This sis article 3');
+    res.send('This is article 3');
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
@@ -57,7 +57,8 @@ app.get('/test-db', function(req,res){
     // make a select req and respond
     pool.query('SELECT * FROM test',function(err,result){
         
-            res.send(JSON.stringfy(result));
+            //res.send(JSON.stringfy(result));
+            console.log(`Done correctly`);
         
     });
 });
