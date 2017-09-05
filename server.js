@@ -57,7 +57,7 @@ app.get('/test-db', function(req,res){
     // make a select req and respond
     pool.query('SELECT * FROM test',function(err,result){
         
-            send(JSON.stringfy(result));
+            res.send(JSON.stringfy(result));
         
     });
 });
